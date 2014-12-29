@@ -106,10 +106,26 @@ def problem4():
                 return
 
 
+def problem5():
+    x = 20
+    while True:
+        divides = True
+        for y in range(1, 20):
+            if x % y != 0:
+                divides = False
+                break
+        if not divides:
+            x += 20
+        else:
+            break
+    print x
+
+
 # problem1()
 # problem2()
 # problem3()
-problem4()
+# problem4()
+problem5()
 
 # roots = []
 # product = 1
