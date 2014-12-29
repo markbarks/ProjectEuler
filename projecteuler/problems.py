@@ -1,5 +1,6 @@
 import datetime
 import math
+import pprint
 
 __author__ = 'markns'
 
@@ -90,20 +91,19 @@ def problem3():
     print datetime.datetime.now()
 
 
-def make_palindromes(start, end):
+def make_palindromes():
     palindromes = []
-    for x in range(start, end):
-        a = x / 1
-        b = x / 10
-        c = x / 100
-        print x, a, b, c
-        break
-    pass
+    for x in range(100, 999):
+        palindromes.append(int(str(x) + str(x)[::-1]))
+    return palindromes
 
 
 def problem4():
-    make_palindromes(100, 999)
-    # print factors(90)
+    for tup in reversed([(p, factors(p)) for p in make_palindromes()]):
+        for fctrs in tup[1]:
+            if 100 < fctrs[0] < 999 and 100 < fctrs[1] < 999:
+                pprint.pprint(tup)
+                return
 
 
 # problem1()
